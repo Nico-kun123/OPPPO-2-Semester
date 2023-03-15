@@ -1,7 +1,6 @@
 /**
  * ДЛЯ ПРОВЕРКИ ПРАВИЛЬНОСТИ:
  * https://www.timeanddate.com/date/durationresult.html?d1=30&m1=04&y1=2014&d2=7&m2=05&y2=1976&ti=on
- *
  */
 
 import { count_days as js } from "./days.js";

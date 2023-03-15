@@ -6,10 +6,14 @@ function getRandomDate() {
   const timestamp = Math.floor(Math.random() * maxDate);
   return new Date(timestamp);
 }
+// год месяц день
+// getRandomDate
+// 2 000 000 
+
 
 function timeMeasure(lang) {
   let start = Date.now();
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 1000000; i++) {
     let x = getRandomDate();
     let y = getRandomDate();
 
@@ -24,8 +28,6 @@ function timeMeasure(lang) {
 }
 
 console.log(
-  `\n~[JavaScript]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`,
-  timeMeasure(js),
-  `\n~[TypeScript]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`,
-  timeMeasure(ts)
+  `\n~[JavaScript]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`, timeMeasure(js),
+  `\n~[TypeScript]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`, timeMeasure(ts)
 );

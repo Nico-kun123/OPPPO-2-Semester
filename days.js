@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 function count_days(first_date, second_date) {
   let dif = Math.ceil(
