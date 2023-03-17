@@ -2,7 +2,7 @@
 
 function count_days(first_date, second_date) {
   let dif = Math.ceil(
-    Math.abs(second_date.getTime() - first_date.getTime()) / (1000 * 3600 * 24)
+    Math.abs(second_date.seconds - first_date.seconds) / (3600 * 24)
   );
 
   return show_string(dif);

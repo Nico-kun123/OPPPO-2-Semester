@@ -1,8 +1,8 @@
 "use strict";
 
-function count_days(first_date: Date, second_date: Date): string {
+function count_days(first_date: any, second_date: any): string {
   let dif: number = Math.ceil(
-    Math.abs(second_date.getTime() - first_date.getTime()) / (1000 * 3600 * 24)
+    Math.abs(second_date.seconds - first_date.seconds) / (3600 * 24)
   );
 
   return show_string(dif);
