@@ -4,7 +4,7 @@
  */
 
 import { count_days as js } from "../modules/days.js";
-import { NUMBER_OF_TESTS } from "../help/constants.js";
+import { NUMBER_OF_TESTS } from "../help/constants.js"; 
 
 // Импорт класса ДАТ
 import { CustomDate } from "../help/class.js";
