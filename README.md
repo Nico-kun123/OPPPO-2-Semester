@@ -32,7 +32,6 @@ npm install
 Ниже приведён список скриптов у данной работы и их пояснение.
 
 ```json
-...
 "scripts": {
     "alltests": "jest --watchAll",
     "almostwholeyear": "jest ./tests/almostwholeyear.test.js",
@@ -44,7 +43,7 @@ npm install
     "run_ts": "ts-node-esm days.ts",
     "run_js": "node days.js",
     "werk": "ts-node-esm main.js"
-  },...
+  },
 ```
 
 Скрипты:
