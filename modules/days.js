@@ -5,7 +5,7 @@ function count_days(firstDate, secondDate) {
     return show_string(dif);
 }
 function show_string(difference) {
-    return `Difference (JS):\t${difference} days have passed!`;
+    return `Difference (JS):\t${difference} days have passed!`; 
 }
 export { count_days, show_string };
 //# sourceMappingURL=days.js.map
