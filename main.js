@@ -1,3 +1,7 @@
+/** ССЫЛКА НА РЕПОЗИТОРИЙ
+ * https://github.com/Nico-kun123/OPPPO-2-Semester
+ */
+
 "use strict";
 import * as js from "./modules/days.js";
 import * as ts from "./modules/days.ts";
