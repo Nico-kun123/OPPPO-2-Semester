@@ -9,7 +9,7 @@ function count_days(firstDate: any, secondDate: any): string {
 }
 
 function show_string(difference: number): string {
-  return `Difference (TS):\t${difference} days have passed!`; 
+  return `Difference (TS):\t${difference} days have passed!`;
 }
 
 export { count_days, show_string };
