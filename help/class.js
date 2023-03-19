@@ -10,7 +10,7 @@ export class CustomDate {
     this.month = Math.floor(Math.random() * 12) + 1;
 
     // Генерируем случайный день от 1 до 31
-    this.day = Math.floor(Math.random() * 31) + 1;
+    this.day = Math.floor(Math.random() * 31) + 1; 
 
     this.adjustDateIfNeeded();
   }

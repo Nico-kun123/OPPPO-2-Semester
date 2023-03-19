@@ -16,7 +16,7 @@ function timeMeasure(language) {
     let firstDate = new CustomDate();
     let secondDate = new CustomDate();
 
-    // Вычислить и вывести результаты на экран
+    // Вычислить и вывести результаты на экран 
     console.log(
       `\nDate 1: ${firstDate.day}-${firstDate.month}-${firstDate.year}`,
       `\nDate 2: ${secondDate.day}-${secondDate.month}-${secondDate.year}\n`,

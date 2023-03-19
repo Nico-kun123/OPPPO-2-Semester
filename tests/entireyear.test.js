@@ -9,7 +9,7 @@ import { NUMBER_OF_TESTS } from "../help/constants.js";
 // Импорт класса ДАТ
 import { CustomDate } from "../help/class.js";
 
-// ТЕСТЫ ДЛЯ ОСОБЫХ ДАТ (РАЗНИЦА СОСТАВЛЯЕТ РОВНО 365 ДНЕЙ)
+// ТЕСТЫ ДЛЯ ОСОБЫХ ДАТ (РАЗНИЦА СОСТАВЛЯЕТ РОВНО 365 ДНЕЙ) 
 for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
   test(`Special Test №${i} (365 day difference): `, () => {
     let firstDate = new CustomDate();

@@ -9,7 +9,7 @@ import { NUMBER_OF_TESTS } from "../help/constants.js";
 // Импорт класса ДАТ
 import { CustomDate } from "../help/class.js";
 
-// ТЕСТЫ ДЛЯ АБСОЛЮТНО СЛУЧАЙНЫХ ДАТ
+// ТЕСТЫ ДЛЯ АБСОЛЮТНО СЛУЧАЙНЫХ ДАТ 
 for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
   test(`Random Date Test №${i}: `, () => {
     let firstDate = new CustomDate();

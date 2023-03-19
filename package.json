@@ -8,7 +8,7 @@
     "alltests": "jest --watchAll",
     "almostwholeyear": "jest ./tests/almostwholeyear.test.js",
     "entireyear": "jest ./tests/entireyear.test.js",
-    "newyear": "jest ./tests/newyear.test.js",
+    "newyear": "jest ./tests/newyear.test.js", 
     "randomdate": "jest ./tests/randomdate.test.js",
     "zerodays": "jest ./tests/zerodays.test.js",
 

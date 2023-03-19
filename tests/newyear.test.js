@@ -11,7 +11,7 @@ import { CustomDate } from "../help/class.js";
 
 // ТЕСТЫ ДЛЯ ОСОБЫХ ДАТ (С НОВЫМ ГОДОМ!!!)
 for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
-  test(`Special Test №${i} (Happy New Year!!!): `, () => {
+  test(`Special Test №${i} (Happy New Year!!!): `, () => { 
     let firstDate = new CustomDate();
     let secondDate = new CustomDate();
 
