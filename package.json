@@ -5,7 +5,13 @@
   "main": "days.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "alltests": "jest --watchAll",
+    "almostwholeyear": "jest ./tests/almostwholeyear.test.js",
+    "entireyear": "jest ./tests/entireyear.test.js",
+    "newyear": "jest ./tests/newyear.test.js",
+    "randomdate": "jest ./tests/randomdate.test.js",
+    "zerodays": "jest ./tests/zerodays.test.js",
+
     "run_ts": "ts-node-esm days.ts",
     "run_js": "node days.js",
     "werk": "ts-node-esm main.js"
@@ -16,6 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
     "babel-jest": "^29.4.3",
     "jest": "^29.4.3",
     "ts-node": "^10.9.1",

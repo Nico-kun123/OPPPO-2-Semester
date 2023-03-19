@@ -6,11 +6,10 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "irrelevant"
   },
   "exclude": ["node_modules"],
   "allowJs": true,
-  "files": ["days.ts"],
+  "files": ["./modules/days.ts"],
   "display": "Recommended",
   "ts-node": {
     "esm": true,
