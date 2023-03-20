@@ -20,10 +20,12 @@ for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
     // firstDate.year = 2024;  // Високосный год
 
     secondDate.year = firstDate.year + 1;
+    
+    let date1 = new Date(firstDate.year, firstDate.month - 1, firstDate.day);
+    let date2 = new Date(secondDate.year, secondDate.month - 1, secondDate.day);
 
-    let dif = Math.abs(
-      firstDate.dateToDays(firstDate.year, firstDate.month, firstDate.day) -
-        secondDate.dateToDays(secondDate.year, secondDate.month, secondDate.day)
+    let dif = Math.round(
+      Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24)
     );
 
     console.log(
