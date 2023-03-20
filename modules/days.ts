@@ -1,9 +1,11 @@
 "use strict";
 
 function count_days(firstDate: any, secondDate: any): string {
-  let dif: number = Math.abs(
-    firstDate.dateToDays(firstDate.year, firstDate.month, firstDate.day) -
-      secondDate.dateToDays(secondDate.year, secondDate.month, secondDate.day)
+  let dif: number = Math.round(
+    Math.abs(
+      firstDate.dateToDays(firstDate.year, firstDate.month, firstDate.day) -
+        secondDate.dateToDays(secondDate.year, secondDate.month, secondDate.day)
+    )
   );
   return show_string(dif);
 }
