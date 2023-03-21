@@ -1,26 +1,72 @@
 import { MIN_DATE, MAX_DATE } from "./constants.js";
 
 export class CustomDate {
-  constructor() {
+  constructor(day = 0, month = 0, year = 0, random = true) {
     // Генерируем случайный год от MIN_DATE до MAX_DATE
-    this.year =
-      Math.floor(Math.random() * (MAX_DATE - MIN_DATE + 1)) + MIN_DATE;
-
     // Генерируем случайный месяц от 1 до 12
-    this.month = Math.floor(Math.random() * 12) + 1;
-
     // Генерируем случайный день от 1 до 31
-    this.day = Math.floor(Math.random() * 31) + 1; 
+    if (random) {
+      this.year = this.randYear();
+      this.month = this.randMonth();
+      this.day = this.randDay();
+    } else {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
 
     this.adjustDateIfNeeded();
   }
 
-  // Меняет день у даты, если дата неправильная
+  // Меняет параметры у даты, если дата неправильная
   adjustDateIfNeeded() {
-    if (this.day > this.getDaysInMonth(this.year, this.month)) {
-      this.day = Math.floor(Math.random() * 31) + 1;
+    if (!this.checkMonth()) {
+      this.month = this.randMonth();
+    }
+
+    if (!this.checkYear()) {
+      this.year = this.randYear();
+    }
+
+    if (!this.checkDay()) {
+      this.day = this.randDay();
       this.adjustDateIfNeeded();
     }
+  }
+
+  // Проверка месяца
+  checkMonth() {
+    return (
+      this.month <= 12 &&
+      this.month >= 1 &&
+      typeof this.month === "number" &&
+      !isNaN(this.month)
+    );
+  }
+
+  // Проверка года
+  checkYear() {
+    return typeof this.year === "number" && !isNaN(this.year);
+  }
+
+  // Проверка дня
+  checkDay() {
+    return (
+      (this.day > 0 && typeof this.day === "number" && !isNaN(this.day)) ||
+      this.day <= this.getDaysInMonth(this.year, this.month)
+    );
+  }
+
+  randDay() {
+    return Math.floor(Math.random() * 31) + 1;
+  }
+
+  randMonth() {
+    return Math.floor(Math.random() * 12) + 1;
+  }
+
+  randYear() {
+    return Math.floor(Math.random() * (MAX_DATE - MIN_DATE + 1)) + MIN_DATE;
   }
 
   // Возвращает кол-во дней для данного месяца
