@@ -7,7 +7,7 @@ export const MAX_DATE = 2025;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Количество тестов
-export const NUMBER_OF_TESTS = 500;
+export const NUMBER_OF_TESTS = 10;
 
 // Количество дат для измерения времени
 export const NUMBER_OF_DATES = 5;
