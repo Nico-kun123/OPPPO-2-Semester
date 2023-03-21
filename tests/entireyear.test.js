@@ -8,32 +8,32 @@ import { NUMBER_OF_TESTS } from "../help/constants.js";
 
 // Импорт класса ДАТ
 import { CustomDate } from "../help/class.js";
+import { randomDay, randomMonth, randomYear } from "../help/random.js";
 
-// ТЕСТЫ ДЛЯ ОСОБЫХ ДАТ (РАЗНИЦА СОСТАВЛЯЕТ РОВНО 365 ДНЕЙ) 
+// ТЕСТЫ ДЛЯ ОСОБЫХ ДАТ (РАЗНИЦА СОСТАВЛЯЕТ РОВНО 365 ДНЕЙ)
 for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
   test(`Special Test №${i} (365 day difference): `, () => {
-    let firstDate = new CustomDate();
-    let secondDate = new CustomDate();
+    // ТЕСТ: Одинаковые месяц и день. Год отличается на 1
+    let year = randomYear();
+    let month = randomMonth();
+    let day = randomDay();
+    let firstDate = new CustomDate(day, month, year, false);
+    let secondDate = new CustomDate(day, month, year + 1, false);
+    firstDate.adjustDateIfNeeded();
+    secondDate.adjustDateIfNeeded();
 
-    secondDate.day = firstDate.day;
-    secondDate.month = firstDate.month = 1;
-
-    // firstDate.year = 2021;  // НЕ Високосный год
-    firstDate.year = 2020;  // Високосный год
-    secondDate.year = firstDate.year + 1;
-    
+    // ~~~
     let date1 = new Date(firstDate.year, firstDate.month - 1, firstDate.day);
     let date2 = new Date(secondDate.year, secondDate.month - 1, secondDate.day);
-
     let dif = Math.round(
       Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24)
     );
 
     console.log(
       `SPECIAL TEST №${i} (365 OR 366 DAY DIFFERENCE)
-  Date 1:\t\t${firstDate.day}-${firstDate.month}-${firstDate.year}
-  Date 2:\t\t${secondDate.day}-${secondDate.month}-${secondDate.year}
-  Difference:\t${dif} days! (NOT including end date)`
+        Date 1:\t\t${firstDate.day}-${firstDate.month}-${firstDate.year}
+        Date 2:\t\t${secondDate.day}-${secondDate.month}-${secondDate.year}
+        Difference:\t${dif} days! (NOT including end date)`
     );
 
     expect(js(firstDate, secondDate)).toBe(
