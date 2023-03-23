@@ -8,20 +8,18 @@ import { NUMBER_OF_TESTS } from "../help/constants.js";
 
 // Импорт класса ДАТ
 import { CustomDate } from "../help/class.js";
+
 import { randomDay, randomMonth, randomYear } from "../help/random.js";
 
-// ТЕСТЫ ДЛЯ ДАТ, КОТОРЫЕ ПОЛНОСТЬЮ СОВПАДАЮТ 
+// ТЕСТЫ ДЛЯ ДАТ, КОТОРЫЕ ПОЛНОСТЬЮ СОВПАДАЮТ
 for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
   test(`Random Date Test №${i}: `, () => {
-    // ТЕСТ: Одинаковые месяц и день и год
     let year = randomYear();
     let month = randomMonth();
     let day = randomDay();
     let firstDate = new CustomDate(day, month, year, false);
     let secondDate = new CustomDate(day, month, year, false);
-    firstDate.adjustDateIfNeeded();
-    secondDate.adjustDateIfNeeded();
-
+    
     // ~~~
     let date1 = new Date(firstDate.year, firstDate.month - 1, firstDate.day);
     let date2 = new Date(secondDate.year, secondDate.month - 1, secondDate.day);
@@ -29,12 +27,13 @@ for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
       Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24)
     );
 
-    console.log(
-      `SPECIAL TEST №${i} (0 DAY DIFFERENCE)
-        Date 1:\t\t${firstDate.day}-${firstDate.month}-${firstDate.year}
-        Date 2:\t\t${secondDate.day}-${secondDate.month}-${secondDate.year}
-        Difference:\t${dif} days! (NOT including end date)`
-    );
+    // Вывести результаты тестирования в консоль
+    // console.log(
+    //   `SPECIAL TEST №${i} (0 DAY DIFFERENCE)
+    //     Date 1:\t\t${firstDate.day}-${firstDate.month}-${firstDate.year}
+    //     Date 2:\t\t${secondDate.day}-${secondDate.month}-${secondDate.year}
+    //     Difference:\t${dif} days! (NOT including end date)`
+    // );
 
     expect(js(firstDate, secondDate)).toBe(
       `Difference (JS):\t${dif} days have passed!`
