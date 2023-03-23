@@ -12,7 +12,6 @@ import { CustomDate } from "../help/class.js";
 // ТЕСТЫ ДЛЯ АБСОЛЮТНО СЛУЧАЙНЫХ ДАТ
 for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
   test(`Random Date Test №${i}: `, () => {
-    // ТЕСТ: День, месяц и год СЛУЧАЙНЫЕ
     let firstDate = new CustomDate();
     let secondDate = new CustomDate();
 
@@ -23,12 +22,13 @@ for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
       Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24)
     );
 
-    console.log(
-      `RANDOM DATE TEST №${i}
-        Date 1:\t\t${firstDate.day}-${firstDate.month}-${firstDate.year}
-        Date 2:\t\t${secondDate.day}-${secondDate.month}-${secondDate.year}
-        Difference:\t${dif} days! (NOT including end date)`
-    );
+    // Вывести результаты тестирования в консоль
+    // console.log(
+    //   `RANDOM DATE TEST №${i}
+    //     Date 1:\t\t${firstDate.day}-${firstDate.month}-${firstDate.year}
+    //     Date 2:\t\t${secondDate.day}-${secondDate.month}-${secondDate.year}
+    //     Difference:\t${dif} days! (NOT including end date)`
+    // );
 
     expect(js(firstDate, secondDate)).toBe(
       `Difference (JS):\t${dif} days have passed!`
